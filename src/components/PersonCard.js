@@ -1,5 +1,5 @@
 import { View, Text, Alert } from "react-native";
-import Button from './Button.js';
+import Button from './button.js';
 import styles from '../styles/styles.js'
 import buttonStyles from '../styles/stylesButton.js'
 
@@ -7,7 +7,7 @@ export default function PersonCard({ item, onDelete, onEdit}){
 
     const confirmDelete = () =>{
         Alert.alert(
-            'deltar pessoa',
+            'deletar pessoa',
             'você tem certeza de que deseja deletar esta pessoa',
             [
                 {text: 'Cancel'},

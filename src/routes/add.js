@@ -4,6 +4,6 @@ export default async function addPerson(person){
     await fetch(`${API_URL}/person`,{
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true'},
-        body: JSON.stringify(Person)
+        body: JSON.stringify(person)
     })
 }

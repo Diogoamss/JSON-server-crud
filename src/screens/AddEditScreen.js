@@ -2,6 +2,7 @@ import react from "react";
 import { useState, useEffect } from "react";
 import { StyleSheet, View, Text, TextInput } from 'react-native';
 import { Button } from "react-native";
+import {button} from "../styles/stylesButton.js";
 import styles from '../styles/styles'
 import buttonStyles from '../styles/stylesButton';
 import  addPerson  from '../routes/add';
