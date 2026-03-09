@@ -7,15 +7,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center"
     },
-
-    title: {
-        flex: 1,
-        fontSize: 24,
-        fontFamily: "JetBrains Mono",
-        fontWeight: "bold",
-        marginTop: 50
-    },
-
+    
     listConteiner: {
         flex: 1,
         backgroundColor: "#9abdf5",
@@ -25,5 +17,13 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         alignItems: "center",
         justifyContent: "center"
+    },
+
+    title: {
+        flex: 1,
+        fontSize: 24,
+        fontFamily: "JetBrains Mono",
+        fontWeight: "bold",
+        marginTop: 50
     }
 })

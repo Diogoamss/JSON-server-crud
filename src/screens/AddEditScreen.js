@@ -1,9 +1,13 @@
 import react from "react";
 import { useState, useEffect } from "react";
-import { View, Text, TextInput } from 'react-native';
-import { Button } from "react-native-web";
+import { StyleSheet, View, Text, TextInput } from 'react-native';
+import { Button } from "react-native";
+import styles from '../styles/styles'
+import buttonStyles from '../styles/stylesButton';
+import  addPerson  from '../routes/add';
+import  editPerson  from '../routes/edit';
 
-export default function AddEditScreen({ navigaiton, route}){
+export default function AddEditScreen({ navigation, route}){
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
@@ -14,13 +18,13 @@ export default function AddEditScreen({ navigaiton, route}){
             alert('Preencha todos os campos')
             return;
         }
-        newPerson({ firstname, lastname, email});
-        navigaiton.goBack();
+        addPerson({ firstname, lastname, email});
+        navigation.goBack();
     };
 
     const handleEdit = () => {
         editPerson(person.id, { firstname, lastname, email});
-        navigaiton.goBack();
+        navigation.goBack();
     }
 
     return(
@@ -31,7 +35,7 @@ export default function AddEditScreen({ navigaiton, route}){
             <TextInput style={styles.input} placeholder="Email" value={email} onChangeText={setEmail}/>
             <View style={buttonStyles.buttons}>
                 <Button title={person ? 'Save person' : 'Add person'} onPress={person ? handleEdit : handleAdd}/>
-                <Button title="Fechar" onPress={() => navigaiton.goBack()}/>
+                <Button title="Fechar" onPress={() => navigation.goBack()}/>
             </View>
         </View>
     );

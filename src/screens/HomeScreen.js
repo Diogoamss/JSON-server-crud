@@ -1,40 +1,42 @@
-import react from "react";
-import { useState, useEffect } from "react";
-import { Button, FlatList, View } from "react-native-web";
+import React, { useState, useEffect } from "react";
+import { Button, FlatList, Text, View } from "react-native";
 import styles from '../styles/styles';
 import { Alert } from "react-native";
+import buttonStyles from '../styles/stylesButton';
+import { usePerson } from "../hooks/usePerson";
+import PersonCard from "../components/PersonCard";
 
+export default function HomeScreen({ navigation }){
+    //pega tudo do hook
+    const { person = [], handleDelete } = usePerson()
 
-export function HomeScreen(){
     return(
         <View style={styles.conteiner}>
             <Text style={styles.title}>Lista de usuarios.</Text>
-            <View style={styles.listConteiner}>
-                 <FlatList
-                    data={peoples}
-                    keyExtractor={(item) => item.id.toString()}
-                    renderItem={({ item }) => (
-                        <View>
-                            <Text>{item.firstname} {item.lastname}</Text>
-                            <Text>{item.email}</Text>
-
-                            <View style={buttonStyles.buttons}>
-                                <Button
-                                    title="Delete person" onPress={() => {
-                                        Alert.alert("Deletar Credencial", "Você quer deletar esta credencial?"
-                                            [{ text: "Cancel"}, {text: "Delete", onPress: () => deletePerson(item.id)}])
-                                    }}
+            
+            {person.length === 0
+                ? <Text>Nenhuma pesosa listada</Text>
+                : <View style={styles.listContainer}>
+                    <FlatList
+                        data={person}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({ item }) => (
+                            <PersonCard
+                                item={item}
+                                onDelete={() => handleDelete(item.id)}
+                                onEdit={() => navigation.navigate('AddEdit', { person:item})}
                                 />
-                                <Button title="edit person" onPress={() => navigation.navigate('AddEdit', item)}/>
-                            </View>
-                        </View>
-                    )} 
-                />
-            </View>
-            <View style={buttonStyles.buttons}>
-                <View>
-                    <Button title="Add person" onPress={() => navigation.navigate('AddEdit')}/>
+                        )}
+                    />
                 </View>
+            }
+
+            <View style={buttonStyles.buttonContainer}>
+                <Button
+                    title="Adicionar pessoa"
+                    onPress={() => navigation.navigate('AddEdit')}
+                    backgroundColor='#79b477'
+                />
             </View>
         
         </View>

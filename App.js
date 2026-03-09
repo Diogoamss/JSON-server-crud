@@ -1,21 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { createNativeStackNavigation } from '@react-navigation/native-stack'
-
-import { HomeScreen } from './src/screens/HomeScreen';
-import { AddEditScreen } from './src/screens/AddEditScreen';
+import { StyleSheet, View } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native';
 
-const Stack = createNativeStackNavigation();
+import  HomeScreen  from './src/screens/HomeScreen';
+import  AddEditScreen  from './src/screens/AddEditScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator 
-        initialRouterName="Home"  
+        initialRouteName="Home"  
       >
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home'}}/>
-        <Stack.Screen name="addEdit" component={AddEditScreen} options={{ title: 'addEdit'}}/>
+        <Stack.Screen name="AddEdit" component={AddEditScreen} options={{ title: 'AddEdit'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
