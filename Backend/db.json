@@ -11,6 +11,42 @@
       "lastname": "Bananudo",
       "email": "Bananososegundo@gmail.com",
       "id": "4d64"
+    },
+    {
+      "firstname": "Random",
+      "lastname": "Randomico",
+      "email": "Rand@gmail.com",
+      "id": "b20a"
+    },
+    {
+      "id": "c182",
+      "firstname": "1",
+      "lastname": "Um",
+      "email": "1@gmail.com"
+    },
+    {
+      "id": "099a",
+      "firstname": "2",
+      "lastname": "Dois",
+      "email": "2@gmail.com"
+    },
+    {
+      "id": "90bb",
+      "firstname": "3",
+      "lastname": "Três ",
+      "email": "3@gmail.com"
+    },
+    {
+      "id": "95b7",
+      "firstname": "4",
+      "lastname": "Quatro ",
+      "email": "4@gmail.com"
+    },
+    {
+      "id": "1de9",
+      "firstname": "5",
+      "lastname": "Cinco",
+      "email": "5@gmail.com "
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
