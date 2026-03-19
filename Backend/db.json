@@ -1,4 +1,11 @@
 {
-  "person": [],
+  "person": [
+    {
+      "id": "8516",
+      "firstname": "12",
+      "lastname": "3",
+      "email": "123@gmail.com"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
