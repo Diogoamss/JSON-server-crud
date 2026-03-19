@@ -1,11 +1,12 @@
 import react from "react";
 import { useState, useEffect } from "react";
-import { StyleSheet, View, Text, TextInput } from 'react-native';
-import { Button } from "react-native";
+import { StyleSheet, TouchableOpacity, View, Text, TextInput } from 'react-native';
+
 import styles from '../styles/styles'
 import buttonStyles from '../styles/stylesButton';
 import  addPerson  from '../routes/add';
 import  editPerson  from '../routes/edit';
+import Button from '../components/button.js'
 
 export default function AddEditScreen({ navigation, route}){
     const [firstname, setFirstname] = useState('');

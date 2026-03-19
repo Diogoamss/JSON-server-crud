@@ -25,12 +25,11 @@ export default function PersonCard({ item, onDelete, onEdit}){
                 <Button
                     title="Deletar pessoa"
                     onPress={confirmDelete}
-                    backgroundColor="#f07d7d"
+                    style={buttonStyles.buttonDelete}
                 />
                 <Button
                     title="Editar pessoa"
                     onPress={onEdit}
-                    backgroundColor="#b3b477"
                 />
             </View>
         </View>

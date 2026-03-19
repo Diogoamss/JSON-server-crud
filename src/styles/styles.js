@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+
+const{height, width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
     container: {
@@ -11,8 +13,8 @@ const styles = StyleSheet.create({
     listConteiner: {
         flex: 1,
         backgroundColor: "#9abdf5",
-        width: "90%",
-        maxHeight: "70%",
+        width: width*0.5,
+        height: "70%",
         marginBottom: 40,
         borderRadius: 10,
         alignItems: "center",
@@ -21,9 +23,36 @@ const styles = StyleSheet.create({
 
     title: {
         flex: 1,
-        fontSize: 24,
+        fontSize: 16,
         fontFamily: "JetBrains Mono",
         fontWeight: "bold",
-        marginTop: 50
+        marginTop: 5,
+        textAlign: "center"
+    },
+
+    textContainer: {
+        flex: 1,
+        alignContent: "center",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#d5dcfc",
+        borderRadius: 20,
+        width: 350
+    },
+
+    text: {
+        flex: 1,
+        fontSize: 15,
+        fontFamily: "JetBrains Mono",
+        fontWeight: "bold",
+        padding: 5,
+    },
+
+    input: {
+        textAlign: "center",
     }
+
+
 })
+
+export default styles;
