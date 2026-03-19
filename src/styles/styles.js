@@ -1,24 +1,21 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-const{height, width } = Dimensions.get('window')
+const{height, width } = Dimensions.get("screen")
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#bdd1f0",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        alignSelf: "center",
     },
     
     listConteiner: {
-        flex: 1,
-        backgroundColor: "#9abdf5",
-        width: width*0.5,
-        height: "70%",
-        marginBottom: 40,
-        borderRadius: 10,
-        alignItems: "center",
-        justifyContent: "center"
+        width: "100%",
+        height: "200",
+        margin: 30,
+        marginBottom: 40
     },
 
     title: {
@@ -32,12 +29,13 @@ const styles = StyleSheet.create({
 
     textContainer: {
         flex: 1,
-        alignContent: "center",
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#d5dcfc",
         borderRadius: 20,
-        width: 350
+        width: 350,
+        padding: 20,
+        marginTop: 20,
     },
 
     text: {
@@ -50,7 +48,17 @@ const styles = StyleSheet.create({
 
     input: {
         textAlign: "center",
-    }
+    },
+    
+    footer: {
+        position: "absolute",
+        backgroundColor: "#abc7f4",
+        height: "7%",
+        width: "100%",
+        bottom: 0,
+    },
+
+
 
 
 })

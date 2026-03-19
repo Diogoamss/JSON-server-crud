@@ -13,13 +13,14 @@ export default function HomeScreen({ navigation }){
     const { person = [], handleDelete } = usePerson()
 
     return(
-        <View style={styles.conteiner}>
+        <View style={styles.container}>
             <Text style={styles.title}>Lista de usuarios.</Text>
             
 
             {person.length === 0
                 ? <Text style={styles.title}>Nenhuma pesosa listada</Text>
                 : <FlatList
+                        style={styles.listConteiner}
                         data={person}
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) => (
@@ -36,9 +37,10 @@ export default function HomeScreen({ navigation }){
                 <Button
                     title="Adicionar pessoa"
                     onPress={() => navigation.navigate('AddEdit')}
-                    style={buttonStyles.buttons}
+                    style={buttonStyles.buttonAdd}
                 />
             </View>
+            <View style={styles.footer}/>
         
         </View>
     )
