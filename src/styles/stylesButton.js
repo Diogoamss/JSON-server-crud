@@ -46,7 +46,7 @@ const{height, width } = Dimensions.get('window')
         fontFamily: 'Arial',
         fontSize: 17,
         padding: 16,
-        marginBottom: 150,
+        marginBottom: 200,
         width: width*0.5,
         height: height*0.07,
         alignItems: "center",

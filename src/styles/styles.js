@@ -4,31 +4,30 @@ const{height, width } = Dimensions.get("screen")
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         backgroundColor: "#bdd1f0",
         alignItems: "center",
         justifyContent: "center",
-        alignSelf: "center",
+        height: height 
+        // alignSelf: "center",
     },
     
     listConteiner: {
         width: "100%",
-        height: "200",
+        height: "50%",
         margin: 30,
-        marginBottom: 40
+        marginBottom: 40,
+        backgroundColor: "#000"
     },
 
     title: {
-        flex: 1,
         fontSize: 16,
         fontFamily: "JetBrains Mono",
         fontWeight: "bold",
         marginTop: 5,
-        textAlign: "center"
+        textAlign: "center",
     },
 
     textContainer: {
-        flex: 1,
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#d5dcfc",
@@ -51,16 +50,12 @@ const styles = StyleSheet.create({
     },
     
     footer: {
-        position: "absolute",
+        // position: "absolute",
         backgroundColor: "#abc7f4",
-        height: "7%",
+        height: "17%",
         width: "100%",
         bottom: 0,
     },
-
-
-
-
 })
 
 export default styles;

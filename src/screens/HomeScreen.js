@@ -20,6 +20,7 @@ export default function HomeScreen({ navigation }){
             {person.length === 0
                 ? <Text style={styles.title}>Nenhuma pesosa listada</Text>
                 : <FlatList
+                        
                         style={styles.listConteiner}
                         data={person}
                         keyExtractor={(item) => item.id.toString()}
