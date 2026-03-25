@@ -2,6 +2,8 @@ import { View, Text, Alert } from "react-native";
 import Button from './button.js';
 import styles from '../styles/styles.js'
 import buttonStyles from '../styles/stylesButton.js'
+import ButtonDelete from "./buttonDelete.js";
+import ButtonEdit from "./buttonEdit.js";
 
 export default function PersonCard({ item, onDelete, onEdit}){
 
@@ -22,14 +24,15 @@ export default function PersonCard({ item, onDelete, onEdit}){
             <Text style={styles.text}>{item.email}</Text>
 
             <View style={buttonStyles.buttonContainer}>
-                <Button
+                <ButtonEdit
+                    title="Editar pessoa"
+                    onPress={onEdit}
+                    style={buttonStyles.buttonEdit}
+                />
+                <ButtonDelete
                     title="Deletar pessoa"
                     onPress={confirmDelete}
                     style={buttonStyles.buttonDelete}
-                />
-                <Button
-                    title="Editar pessoa"
-                    onPress={onEdit}
                 />
             </View>
         </View>

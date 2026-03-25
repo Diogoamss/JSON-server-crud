@@ -10,17 +10,22 @@ const styles = StyleSheet.create({
         height: height 
         // alignSelf: "center",
     },
+
+    editConteiner: {
+        backgroundColor: "#bdd1f0",
+        height: height,
+        alignItems: "center"
+    },
     
     listConteiner: {
         width: "100%",
         height: "50%",
         margin: 30,
         marginBottom: 40,
-        backgroundColor: "#000"
     },
 
     title: {
-        fontSize: 16,
+        fontSize: 20,
         fontFamily: "JetBrains Mono",
         fontWeight: "bold",
         marginTop: 5,
@@ -35,6 +40,7 @@ const styles = StyleSheet.create({
         width: 350,
         padding: 20,
         marginTop: 20,
+        alignSelf: "center"
     },
 
     text: {
@@ -47,6 +53,7 @@ const styles = StyleSheet.create({
 
     input: {
         textAlign: "center",
+        marginBottom: 8,
     },
     
     footer: {

@@ -18,10 +18,8 @@ const{height, width } = Dimensions.get('window')
         justifyContent: "center"
     },
 
-
-
     buttonDelete: {
-        backgroundColor: '#d42727',
+        backgroundColor: '#e69090',
         borderRadius: 28,
         color: '#ffff',
         fontFamily: 'Arial',
@@ -37,16 +35,17 @@ const{height, width } = Dimensions.get('window')
     buttonContainer: {
         justifyContent: "center",
         alignContent:"center",
+        marginTop: 8,
     },
 
-    buttonAdd: {
+    buttonEdit: {
         backgroundColor: '#569deb',
         borderRadius: 28,
         color: '#ffff',
         fontFamily: 'Arial',
         fontSize: 17,
         padding: 16,
-        marginBottom: 200,
+        marginBottom: 20,
         width: width*0.5,
         height: height*0.07,
         alignItems: "center",

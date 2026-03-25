@@ -5,6 +5,18 @@
       "lastname": "4",
       "email": "23@gmail.com ",
       "id": "3dfb"
+    },
+    {
+      "id": "4c6a",
+      "firstname": "Teste",
+      "lastname": "Da silva",
+      "email": "Tes@gmail.com"
+    },
+    {
+      "id": "5f9d",
+      "firstname": "Teste 2",
+      "lastname": "Da silva segundo",
+      "email": "Tes2@gmail.com"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
