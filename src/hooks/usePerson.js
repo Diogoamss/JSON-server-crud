@@ -2,13 +2,13 @@ import { useState, useCallback } from "react";
 import { useFocusEffect } from "@react-navigation/native";
 import deletePerson from '../routes/delete.js'
 
-
 const API_URL = process.env.EXPO_PUBLIC_API_URL
 console.log('URL:', process.env.EXPO_PUBLIC_API_URL);
 
 
 export function usePerson(){
     const [person, setPerson] = useState([])
+    const [loading, setLoading] = useState(false)
 
     //useFocusEffect executa só quando a tela entra em foco
     useFocusEffect(
@@ -17,6 +17,7 @@ export function usePerson(){
 
     //async e await pra esperar respostas da api
     const loadPerson = useCallback(async() =>{
+        setLoading(true)
         try {
             const response = await fetch(`${API_URL}/person`, {
                 headers: {'ngrok-skip-browser-warning': 'true'}
@@ -27,13 +28,17 @@ export function usePerson(){
             console.log('dados da api:', JSON.stringify(data)) //para debugar
         }catch (error){
             console.error(error);
+        }finally{
+            setLoading(false)
         }
+        
     }, []);
 
     const handleDelete = async(id) =>{
         //espera deletar na api antes de recarregar a lista
+        setLoading(true)
         await deletePerson(id)
-        loadPerson()
+        await loadPerson()
     }
-    return{ person, loadPerson, handleDelete}
+    return{ person, loadPerson, handleDelete, loading}
 }

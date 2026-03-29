@@ -7,8 +7,15 @@ const styles = StyleSheet.create({
         backgroundColor: "#bdd1f0",
         alignItems: "center",
         justifyContent: "center",
-        height: height 
+        height: height, 
         // alignSelf: "center",
+    },
+
+    containerLoading: {
+        backgroundColor: "#bdd1f0",
+        alignItems: "center",
+        justifyContent: "center",
+        height: height,
     },
 
     editConteiner: {
@@ -20,7 +27,7 @@ const styles = StyleSheet.create({
     listConteiner: {
         width: "100%",
         height: "50%",
-        margin: 30,
+        margin: 40,
         marginBottom: 40,
     },
 
@@ -28,7 +35,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontFamily: "JetBrains Mono",
         fontWeight: "bold",
-        marginTop: 5,
+        marginTop: 8,
         textAlign: "center",
     },
 
@@ -59,9 +66,16 @@ const styles = StyleSheet.create({
     footer: {
         // position: "absolute",
         backgroundColor: "#abc7f4",
-        height: "17%",
+        height: "6%",
         width: "100%",
         bottom: 0,
+    },
+
+    header: {
+        height: "5.5%",
+        width: "100%",
+        top: 0,
+        backgroundColor: "#abc7f4"
     },
 })
 

@@ -7,13 +7,16 @@ import Button from "../components/button.js"
 import buttonStyles from '../styles/stylesButton.js';
 import { usePerson } from "../hooks/usePerson.js";
 import PersonCard from "../components/PersonCard.js";
+import Loading from "../components/activityIndicator.js";
 
 export default function HomeScreen({ navigation }){
     //pega tudo do hook
-    const { person = [], handleDelete } = usePerson()
+    const { person = [], handleDelete, loading } = usePerson()
+
 
     return(
         <View style={styles.container}>
+            <View style={styles.header}/>
             <Text style={styles.title}>Lista de usuarios.</Text>
             
 
@@ -42,7 +45,8 @@ export default function HomeScreen({ navigation }){
                 />
             </View>
             <View style={styles.footer}/>
-        
+
+            {loading ? <Loading/>: null}
         </View>
     )
 }

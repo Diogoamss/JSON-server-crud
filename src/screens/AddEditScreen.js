@@ -40,6 +40,7 @@ export default function AddEditScreen({ navigation, route}){
 
     return(
         <View style={styles.editConteiner}>
+            <View style={styles.header}/>
             <Text style={styles.title}>{person ? 'editar pessoa' : 'adicionar pessoa'}</Text>
             <View style={styles.textContainer}>
                 <TextInput style={styles.input} placeholder="First Name" value={firstname} onChangeText={setFirstname}/>

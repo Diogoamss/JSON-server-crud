@@ -17,6 +17,30 @@
       "firstname": "Teste 2",
       "lastname": "Da silva segundo",
       "email": "Tes2@gmail.com"
+    },
+    {
+      "id": "9849",
+      "firstname": "Fabrício ",
+      "lastname": "Araújo krull",
+      "email": "Fabricio@gmail.com"
+    },
+    {
+      "id": "1df5",
+      "firstname": "Diogo ",
+      "lastname": "André ",
+      "email": "Gmail@gmail.com "
+    },
+    {
+      "id": "242e",
+      "firstname": "Gabriel ",
+      "lastname": "Compare ",
+      "email": "Comparine@gmail.com"
+    },
+    {
+      "firstname": "Rafael ",
+      "lastname": "Último nome da silva",
+      "email": "Rafa@gmail.com ",
+      "id": "aa34"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

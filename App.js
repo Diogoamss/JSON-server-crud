@@ -13,6 +13,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator 
         initialRouteName="Home"  
+        screenOptions={{headerShown: false}}
       >
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home'}}/>
         <Stack.Screen name="AddEdit" component={AddEditScreen} options={{ title: 'AddEdit'}}/>
