@@ -13,6 +13,7 @@ export default function AddEditScreen({ navigation, route}){
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
 
     const person = route.params?.person;
 
@@ -21,20 +22,21 @@ export default function AddEditScreen({ navigation, route}){
             setFirstname(person.firstname || '')
             setLastname(person.lastname || '')
             setEmail(person.email || '')
+            setPhone(person.phone || '')
         }
     }, [person])
 
     const handleAdd = () => {
-        if(!firstname || !lastname || !email) {
+        if(!firstname || !lastname || !email || !phone) {
             alert('Preencha todos os campos')
             return;
         }
-        addPerson({ firstname, lastname, email});
+        addPerson({ firstname, lastname, email, phone});
         navigation.goBack();
     };
 
     const handleEdit = () => {
-        editPerson(person.id, { firstname, lastname, email});
+        editPerson(person.id, { firstname, lastname, email, phone});
         navigation.goBack();
     }
 
@@ -46,6 +48,7 @@ export default function AddEditScreen({ navigation, route}){
                 <TextInput style={styles.input} placeholder="First Name" value={firstname} onChangeText={setFirstname}/>
                 <TextInput style={styles.input} placeholder="Last Name" value={lastname} onChangeText={setLastname}/>
                 <TextInput style={styles.input} placeholder="Email" value={email} onChangeText={setEmail}/>
+                <TextInput style={styles.input} placeholder="Phone" value={phone} onChangeText={setPhone} keyboardType="phone-pad"/>
             <View style={buttonStyles.buttonContainer}>
                 <Button title={person ? 'Salvar alterações' : 'Adicionar pessoa'} onPress={person ? handleEdit : handleAdd}/>
                 <ButtonDelete title="Fechar" onPress={() => navigation.goBack()}/>

@@ -7,13 +7,14 @@ export function useAddEdit(person, navigation) {
     const [firstName, setFirstname] = useState(person?.firstName ?? '')
     const [lastName, setLastname] = useState(person?.lastName ?? '')
     const [email, setEmail] = useState(person?.email ?? '')
+    const [phone, setPhone] = useState(person?.phone ?? '')
     // o "?" e "??" para transformar em string vazia quando for null ou undefined
 
     
     const isEditing = !!person
 
     const fieldsAreValid = () => {
-        if (!firstName || !lastName || !email){
+        if (!firstName || !lastName || !email || !phone){
             Alert.alert('Atenção', 'preencha todos os campos.')
             return false
         }
@@ -23,16 +24,16 @@ export function useAddEdit(person, navigation) {
     const handleSubimit = () => {
         if (!fieldsAreValid()) return
         const message = isEditing
-        ?'Dados serão atualizados para:\n\n${firstName} ${lastName}\n${email}'
-        :'Dados a serem adicionados:\n\n${firstName} ${lastName}\n${email}'
+        ?'Dados serão atualizados para:\n\n${firstName} ${lastName}\n${email} ${phone}'
+        :'Dados a serem adicionados:\n\n${firstName} ${lastName}\n${email} ${phone}'
         Alert.alert(
             isEditing ? 'editar pessoa' : 'adicionar pessoa',
             message,[
                 { text: 'Cancelar'},
                 {text: 'salvar', onPress: async() => {
                     isEditing
-                    ? await editPerson(person.id, {firstName, lastName, email})
-                    : await addPerson({ firstName, lastName , email })
+                    ? await editPerson(person.id, {firstName, lastName, email, phone})
+                    : await addPerson({ firstName, lastName , email, phone })
                     navigation.navigate('Home')
                 }}
             ]
@@ -43,6 +44,7 @@ export function useAddEdit(person, navigation) {
         firstName, setFirstname,
         lastName, setLastname,
         email, setEmail,
+        phone, setPhone,
         isEditing,
         handleSubimit,
     }

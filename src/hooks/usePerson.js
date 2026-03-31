@@ -66,7 +66,8 @@ export function usePerson(){
         const resultado = person.filter(p =>
             p.firstname?.toLowerCase().trim().includes(texto.toLowerCase()) ||
             p.lastname?.toLowerCase().trim().includes(texto.toLowerCase()) ||
-            p.email?.toLowerCase().trim().includes(texto.toLowerCase())
+            p.email?.toLowerCase().trim().includes(texto.toLowerCase()) ||
+            p.phone?.toLowerCase().trim().includes(texto.toLowerCase())
         )
 
         setFiltered(resultado)

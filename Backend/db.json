@@ -1,22 +1,11 @@
 {
   "person": [
     {
-      "id": "1df5",
       "firstname": "Diogo ",
       "lastname": "André ",
-      "email": "Gmail@gmail.com "
-    },
-    {
-      "id": "242e",
-      "firstname": "Gabriel ",
-      "lastname": "Compare ",
-      "email": "Comparine@gmail.com"
-    },
-    {
-      "id": "d62f",
-      "firstname": "Dio",
-      "lastname": "Sla",
-      "email": "Sla@gmail.com "
+      "email": "Gmail@gmail.com ",
+      "phone": "19987113944",
+      "id": "1df5"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

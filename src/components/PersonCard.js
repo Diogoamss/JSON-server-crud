@@ -22,6 +22,7 @@ export default function PersonCard({ item, onDelete, onEdit}){
         <View style={styles.textContainer}>
             <Text style={styles.text}>{item.firstname} {item.lastname}</Text>
             <Text style={styles.text}>{item.email}</Text>
+            <Text style={styles.text}>{item.phone}</Text>
 
             <View style={buttonStyles.buttonContainer}>
                 <ButtonEdit
