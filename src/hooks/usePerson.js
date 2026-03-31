@@ -1,7 +1,6 @@
 import { useState, useCallback } from "react";
 import { useFocusEffect } from "@react-navigation/native";
 import deletePerson from '../routes/delete.js'
-import SearchBar from "../components/searchBar.js";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL
 console.log('URL:', process.env.EXPO_PUBLIC_API_URL);
@@ -29,6 +28,7 @@ export function usePerson(){
 
             const data = await response.json();
             setPerson(data);
+            setFiltered(data);
 
             //PARA DEBUGGAR
             console.log('dados da api:', JSON.stringify(data)) //para debugar
@@ -53,7 +53,21 @@ export function usePerson(){
     function handleSearch(texto){
         setSearch(texto)
 
-        const resultado = person.filter(p => p.nome.toLowerCase().includes(texto.toLowerCase()))
+        //PARA DEBUGAR
+        console.log('texto', texto)
+        console.log('pessoas', person.length)
+        console.log('pessoa 01', JSON.stringify(person[0]))
+        //PARA DEBUGAR
+
+        if(texto.trim() === ""){
+            setFiltered(person)
+            return
+        }
+        const resultado = person.filter(p =>
+            p.firstname?.toLowerCase().trim().includes(texto.toLowerCase()) ||
+            p.lastname?.toLowerCase().trim().includes(texto.toLowerCase()) ||
+            p.email?.toLowerCase().trim().includes(texto.toLowerCase())
+        )
 
         setFiltered(resultado)
     }
