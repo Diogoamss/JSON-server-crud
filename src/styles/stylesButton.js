@@ -57,7 +57,11 @@ const{height, width } = Dimensions.get('window')
         borderRadius: 28,
         fontFamily: 'Arial',
         fontSize: 14,
-        marginTop: 10
+        marginTop: 30,
+        backgroundColor: '#d5dcfc',
+        width: 350,
+        textAlign: 'center',
+
     }
 })
 
