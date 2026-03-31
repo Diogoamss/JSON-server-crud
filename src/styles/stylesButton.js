@@ -1,5 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
 import button from "../components/button";
+import searchBar from "../components/searchBar";
 
 const{height, width } = Dimensions.get('window')
 
@@ -50,6 +51,13 @@ const{height, width } = Dimensions.get('window')
         height: height*0.07,
         alignItems: "center",
         justifyContent: "center"
+    },
+
+    searchBar: {
+        borderRadius: 28,
+        fontFamily: 'Arial',
+        fontSize: 14,
+        marginTop: 10
     }
 })
 

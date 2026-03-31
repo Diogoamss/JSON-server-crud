@@ -8,24 +8,27 @@ import buttonStyles from '../styles/stylesButton.js';
 import { usePerson } from "../hooks/usePerson.js";
 import PersonCard from "../components/PersonCard.js";
 import Loading from "../components/activityIndicator.js";
+import SearchBar from "../components/searchBar.js";
+
 
 export default function HomeScreen({ navigation }){
     //pega tudo do hook
-    const { person = [], handleDelete, loading } = usePerson()
+    const { person = [], handleDelete, loading, search, handleSearch, filtered } = usePerson()
 
 
     return(
         <View style={styles.container}>
             <View style={styles.header}/>
             <Text style={styles.title}>Lista de usuarios.</Text>
+            <SearchBar search={search} setSearch={handleSearch} />
             
 
-            {person.length === 0
+            {filtered.length === 0
                 ? <Text style={styles.title}>Nenhuma pesosa listada</Text>
                 : <FlatList
                         
                         style={styles.listConteiner}
-                        data={person}
+                        data={filtered}
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) => (
                             <PersonCard
