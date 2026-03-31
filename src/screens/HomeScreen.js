@@ -17,8 +17,9 @@ export default function HomeScreen({ navigation }){
 
 
     return(
+        <View style={styles.content}>
+        <View style={styles.header}/>
         <View style={styles.container}>
-            <View style={styles.header}/>
             <Text style={styles.title}>Lista de usuarios.</Text>
             <SearchBar search={search} setSearch={handleSearch} />
             
@@ -47,9 +48,10 @@ export default function HomeScreen({ navigation }){
                     style={buttonStyles.buttonAdd}
                 />
             </View>
-            <View style={styles.footer}/>
 
             {loading ? <Loading/>: null}
+        </View>
+        <View style={styles.footer}/>
         </View>
     )
 }

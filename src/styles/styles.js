@@ -3,11 +3,17 @@ import { StyleSheet, Dimensions } from "react-native";
 const{height, width } = Dimensions.get("screen")
 
 const styles = StyleSheet.create({
+    content: {
+        backgroundColor: "#abc7f4",
+        height: height, 
+        // alignSelf: "center",
+    },
+    
     container: {
         backgroundColor: "#bdd1f0",
         alignItems: "center",
         justifyContent: "center",
-        height: height, 
+        height: 790
         // alignSelf: "center",
     },
 
@@ -68,7 +74,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#abc7f4",
         height: "6%",
         width: "100%",
-        bottom: 0,
+        bottom: -70,
     },
 
     header: {
