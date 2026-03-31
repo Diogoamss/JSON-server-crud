@@ -1,11 +1,81 @@
 {
   "person": [
     {
-      "firstname": "Diogo ",
+      "firstname": "Diogo",
       "lastname": "André ",
       "email": "Gmail@gmail.com ",
       "phone": "19987113944",
       "id": "1df5"
+    },
+    {
+      "firstname": "Carlos",
+      "lastname": "Oliveira",
+      "email": "carlos.oliveira@gmail.com",
+      "phone": "11987654321",
+      "id": "a1b2"
+    },
+    {
+      "firstname": "Ana",
+      "lastname": "Souza",
+      "email": "ana.souza@hotmail.com",
+      "phone": "21976543210",
+      "id": "c3d4"
+    },
+    {
+      "firstname": "Pedro",
+      "lastname": "Ferreira",
+      "email": "pedro.ferreira@outlook.com",
+      "phone": "31965432109",
+      "id": "e5f6"
+    },
+    {
+      "firstname": "Mariana",
+      "lastname": "Costa",
+      "email": "mariana.costa@gmail.com",
+      "phone": "41954321098",
+      "id": "g7h8"
+    },
+    {
+      "firstname": "Lucas",
+      "lastname": "Almeida",
+      "email": "lucas.almeida@yahoo.com",
+      "phone": "51943210987",
+      "id": "i9j0"
+    },
+    {
+      "firstname": "Juliana",
+      "lastname": "Pereira",
+      "email": "juliana.pereira@gmail.com",
+      "phone": "61932109876",
+      "id": "k1l2"
+    },
+    {
+      "firstname": "Rafael",
+      "lastname": "Nascimento",
+      "email": "rafael.nascimento@hotmail.com",
+      "phone": "71921098765",
+      "id": "m3n4"
+    },
+    {
+      "firstname": "Fernanda",
+      "lastname": "Lima",
+      "email": "fernanda.lima@outlook.com",
+      "phone": "81910987654",
+      "id": "o5p6"
+    },
+    {
+      "firstname": "Bruno",
+      "lastname": "Rodrigues",
+      "email": "bruno.rodrigues@gmail.com",
+      "phone": "91909876543",
+      "id": "q7r8"
+    },
+    {
+      "firstname": "Camila",
+      "lastname": "Martins",
+      "email": "camila.martins@yahoo.com",
+      "phone": "11898765432",
+      "id": "s9t0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

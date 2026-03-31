@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { useFocusEffect } from "@react-navigation/native";
 import deletePerson from '../routes/delete.js'
+import { Alert } from "react-native";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL
 console.log('URL:', process.env.EXPO_PUBLIC_API_URL);
@@ -22,10 +23,21 @@ export function usePerson(){
     const loadPerson = useCallback(async() =>{
         setLoading(true)
         try {
+            //faz um fetch para a API 
             const response = await fetch(`${API_URL}/person`, {
                 headers: {'ngrok-skip-browser-warning': 'true'}
             });
 
+            //alerta erros de conexão 
+            if(!response.ok){
+                Alert.alert(
+                    'erro',
+                    `o servidor retornou um erro: ${response.status}`
+                )
+                return
+            }
+
+            //atualiza setPerson(lista completa) e setFiltered(filtro para pesquisas na searchbar)
             const data = await response.json();
             setPerson(data);
             setFiltered(data);
@@ -35,8 +47,14 @@ export function usePerson(){
 
 
         }catch (error){
+            Alert.alert(
+                'erro de conexão',
+                'não foi possivel se conectar ao servidor =,(',
+                [{ text:'Ok'}]
+            )
             console.error(error);
         }finally{
+            //finally determina o fim do processamento da API e com ele o setLoading. 
             setLoading(false)
         }
         
@@ -59,6 +77,7 @@ export function usePerson(){
         console.log('pessoa 01', JSON.stringify(person[0]))
         //PARA DEBUGAR
 
+        //compara o texto escrito com os campos do bd
         if(texto.trim() === ""){
             setFiltered(person)
             return

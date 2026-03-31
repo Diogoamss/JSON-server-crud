@@ -15,8 +15,10 @@ export default function AddEditScreen({ navigation, route}){
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
 
-    const person = route.params?.person;
+    const person = route.params?.person; //recebe os dados da navegação
 
+    //se os dados de person já estiverem preenchidos abre no "modo edição"
+    //se for udefined ele não preenche os campos da tela no "modo adição"
     useEffect(() =>{
         if(person){
             setFirstname(person.firstname || '')
@@ -27,19 +29,25 @@ export default function AddEditScreen({ navigation, route}){
     }, [person])
 
     const handleAdd = () => {
+        //se os valor dos campos estiverem em branco passa um alert
         if(!firstname || !lastname || !email || !phone) {
             alert('Preencha todos os campos')
             return;
         }
-        addPerson({ firstname, lastname, email, phone});
+        addPerson({ firstname, lastname, email, phone}); // chama a função com a rota /person POST 
         navigation.goBack();
     };
 
     const handleEdit = () => {
-        editPerson(person.id, { firstname, lastname, email, phone});
+        if(!firstname || !lastname || !email || !phone) {
+            alert('Preencha todos os campos')
+            return;
+        }
+        editPerson(person.id, { firstname, lastname, email, phone}); // chama a função com a rota /person${id} PUT
         navigation.goBack();
     }
 
+    //botão muda de salvar para adcionar dependendo do "modo"
     return(
         <View style={styles.editConteiner}>
             <View style={styles.header}/>
@@ -50,7 +58,7 @@ export default function AddEditScreen({ navigation, route}){
                 <TextInput style={styles.input} placeholder="Email" value={email} onChangeText={setEmail}/>
                 <TextInput style={styles.input} placeholder="Phone" value={phone} onChangeText={setPhone} keyboardType="phone-pad"/>
             <View style={buttonStyles.buttonContainer}>
-                <Button title={person ? 'Salvar alterações' : 'Adicionar pessoa'} onPress={person ? handleEdit : handleAdd}/>
+                <Button title={person ? 'Salvar alterações' : 'Adicionar pessoa'} onPress={person ? handleEdit : handleAdd}/> 
                 <ButtonDelete title="Fechar" onPress={() => navigation.goBack()}/>
             </View>
             </View>

@@ -10,9 +10,11 @@ export function useAddEdit(person, navigation) {
     const [phone, setPhone] = useState(person?.phone ?? '')
     // o "?" e "??" para transformar em string vazia quando for null ou undefined
 
-    
+
+    //os !! duplos faz person virar booleano, se for null ou undefined = false caso contrario true
     const isEditing = !!person
 
+    //verifica se os campos foram preenchidos
     const fieldsAreValid = () => {
         if (!firstName || !lastName || !email || !phone){
             Alert.alert('Atenção', 'preencha todos os campos.')
@@ -21,6 +23,8 @@ export function useAddEdit(person, navigation) {
         return true
     }
 
+    //valida os campos depois passa um alert com botões para cancelar e salvar.
+    // ao confirmar chama a rota correta (editPerson ou addPerson)
     const handleSubimit = () => {
         if (!fieldsAreValid()) return
         const message = isEditing

@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { TouchableOpacity, FlatList, Text, View } from "react-native";
-import { useFocusEffect } from "@react-navigation/native";
+import { FlatList, Text, View } from "react-native";
 
 import styles from '../styles/styles.js';
 import Button from "../components/button.js"
@@ -12,7 +10,7 @@ import SearchBar from "../components/searchBar.js";
 
 
 export default function HomeScreen({ navigation }){
-    //pega tudo do hook
+    //pega tudo do hook 
     const { person = [], handleDelete, loading, search, handleSearch, filtered } = usePerson()
 
 
@@ -25,7 +23,7 @@ export default function HomeScreen({ navigation }){
             
 
             {filtered.length === 0
-                ? <Text style={styles.title}>Nenhuma pesosa listada</Text>
+                ? <Text style={styles.title}>Nenhuma pessoa listada</Text>
                 : <FlatList
                         
                         style={styles.listConteiner}
